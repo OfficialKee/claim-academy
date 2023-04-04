@@ -8,6 +8,8 @@ public class PracticeLabOne {
         Median(123, 54, 76);
         XOR(true, false);
         IsFactor(100, 9);
+        IsPerfect(8);
+        IsPrime(7);
     }
 
     public static void Max3(int numOne, int numTwo, int numThree) {
@@ -51,9 +53,44 @@ public class PracticeLabOne {
     
         }
 
-    public static void IsFactor(int k, int n) {
+    public static boolean IsFactor(int k, int n) {
 
-        System.out.println(k%n==0);
+        boolean factorialize = k%n==0;
+        // System.out.println(factorialize);
+
+        return factorialize;
+    }
+
+    private static void IsPerfect(int k)  {
+
+        int sum = 0;        
+        for(int i = 1;i < k;i++)
+        {  
+            if(IsFactor(k, i))
+            {
+                sum+=i;
+            }
+        }
+        System.out.println(sum == k);       
+    }
+
+    private static boolean IsPrime(int k) {
+        if(k <= 1){
+            return false;
+        }
+       
+        for(int i = 2; i <k / 2; i++)
+        {
+            if(IsFactor(k,i))
+            {
+                System.out.println(false);
+               return false;
+            }
+            
+        } 
+        System.out.println(true);
+        return true;
+        
     }
 
 }
