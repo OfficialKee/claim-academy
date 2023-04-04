@@ -7,6 +7,7 @@ public class PracticeLabOne {
         Min3(4, 30, 46);
         Median(123, 54, 76);
         XOR(true, false);
+        IsFactor(100, 9);
     }
 
     public static void Max3(int numOne, int numTwo, int numThree) {
@@ -49,5 +50,10 @@ public class PracticeLabOne {
         System.out.println(boolOne != boolTwo);
     
         }
+
+    public static void IsFactor(int k, int n) {
+
+        System.out.println(k%n==0);
+    }
 
 }
