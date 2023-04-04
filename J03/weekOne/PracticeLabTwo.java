@@ -1,4 +1,4 @@
-public class JavaPractice {
+public class PracticeLabTwo {
 
   public static void main(String[] args) {
     circleFunction(6);
@@ -6,7 +6,7 @@ public class JavaPractice {
     decimation(15);
     GetAscii('b');
     integration(15.4);
-    LeapOrNot(1904);
+    LeapOrNot(2001);
   }
 
   public static void circleFunction(double radius) {
@@ -55,7 +55,7 @@ public class JavaPractice {
         if (stepThree % 400 == 0) {
           System.out.println("Its a leap year with 366 days!");
         } else {
-          System.out.println("Its a leap year with 366 days!");
+          System.out.println("Its not a leap year with 365 days!");
         }
       } else {
         System.out.println("Its a leap year with 366 days!");
@@ -68,16 +68,6 @@ public class JavaPractice {
 
   }
 
-  // How to determine whether a year is a leap year
-  // To determine whether a year is a leap year, follow these steps:
-
-  // 1. If the year is evenly divisible by 4, go to step 2. Otherwise, go to step
-  // 5.
-  // 2. If the year is evenly divisible by 100, go to step 3. Otherwise, go to
-  // step 4.
-  // 3. If the year is evenly divisible by 400, go to step 4. Otherwise, go to
-  // step 5.
-  // 4. The year is a leap year (it has 366 days).
-  // 5. The year is not a leap year (it has 365 days).
+ 
 
 }
