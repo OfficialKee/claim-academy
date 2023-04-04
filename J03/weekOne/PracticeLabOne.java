@@ -1,8 +1,11 @@
+import java.util.Arrays;
+
 public class PracticeLabOne {
    public static void main(String[] args) {
 
     max3(23, 345, 43);
     min3(4, 30, 46);
+    median(123, 54, 76);
    }
    public static void max3(int numOne, int numTwo, int numThree) {
 
@@ -31,5 +34,11 @@ public class PracticeLabOne {
     }
     System.out.println(Min);
     
+   }
+
+   public static void median(int numOne, int numTwo, int numThree) {
+    int[]  MyArr = {numOne,numTwo,numThree};
+    Arrays.sort(MyArr);
+    System.out.println(MyArr[1]);
    }
 }
