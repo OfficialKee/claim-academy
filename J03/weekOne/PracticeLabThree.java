@@ -1,13 +1,14 @@
 public class PracticeLabThree {
     public static void main(String[] args) {
         RemoveCharacter("hellhhhshikeeho", 'h');
+       
     }
 
     public static void RemoveCharacter(String word, char RemChar) {
 
 
         // wors is manipulated in to a character array
-        char[] c = word.toCharArray();
+        char[] c = word.toLowerCase().toCharArray();
         // created an empty string
         String newStr = "";
         // began looping through the character array created above
@@ -15,7 +16,11 @@ public class PracticeLabThree {
         if (c[i] != ((int) RemChar) ) 
             newStr += c[i];
     }
-System.out.println("Char Array : "+newStr);
+        System.out.println(newStr);
 
     }
+
+
+
+
 }
