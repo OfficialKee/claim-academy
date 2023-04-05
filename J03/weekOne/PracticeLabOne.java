@@ -50,19 +50,16 @@ public class PracticeLabOne {
         System.out.println(MyArr[1]);
         return MyArr[1];
 
-
-       
-
-
-
-
-
     }
 
-    public static void XOR(boolean boolOne, boolean boolTwo) {
-        System.out.println(boolOne != boolTwo);
-    
+    public static boolean XOR(boolean boolOne, boolean boolTwo) {
+        if (boolOne && boolTwo){
+            return false;
+        }else{
+            return (boolOne|boolTwo)? true:false;
         }
+       
+     }
 
     public static boolean IsFactor(int k, int n) {
 
