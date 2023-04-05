@@ -3,13 +3,13 @@ import java.util.Arrays;
 public class PracticeLabOne {
     public static void main(String[] args) {
 
-        Max3(23, 345, 43);
-        Min3(4, 30, 46);
+        // Max3(23, 345, 43);
+        // Min3(4, 30, 46);
         Median(123, 54, 76);
-        XOR(true, false);
-        IsFactor(100, 9);
-        IsPerfect(8);
-        IsPrime(7);
+        // XOR(true, false);
+        // IsFactor(100, 9);
+        // IsPerfect(8);
+        // IsPrime(7);
     }
 
     public static int Max3(int numOne, int numTwo, int numThree) {
@@ -45,19 +45,28 @@ public class PracticeLabOne {
     }
 
     public static int Median(int numOne, int numTwo, int numThree) {
-        int[] MyArr = { numOne, numTwo, numThree };
-        Arrays.sort(MyArr);
-        System.out.println(MyArr[1]);
-        return MyArr[1];
+        int max = Max3(numOne, numTwo, numThree);
+        int min = Min3(numOne, numTwo, numThree);
+        int total = numOne + numThree + numThree;
+        int NewMedian = total - max - min;
+        return NewMedian;
+
+        
+        // Arrays.sort(MyArr);
+        // System.out.println(MyArr[1]);
+        // return MyArr[1];
+
 
     }
 
     public static boolean XOR(boolean boolOne, boolean boolTwo) {
-        if (boolOne && boolTwo){
-            return false;
-        }else{
-            return (boolOne|boolTwo)? true:false;
-        }
+        // if (boolOne && boolTwo){
+        //     return false;
+        // }else{
+        //     return (boolOne|boolTwo) ? true:false;
+        // }
+
+        return boolOne^boolTwo;
        
      }
 
