@@ -12,7 +12,7 @@ public class PracticeLabOne {
         IsPrime(7);
     }
 
-    public static void Max3(int numOne, int numTwo, int numThree) {
+    public static int Max3(int numOne, int numTwo, int numThree) {
 
         int[] MyArr = { numOne, numTwo, numThree };
 
@@ -24,10 +24,11 @@ public class PracticeLabOne {
             }
         }
         System.out.println(Max);
+        return(Max);
 
     }
 
-    public static void Min3(int numOne, int numTwo, int numThree) {
+    public static int Min3(int numOne, int numTwo, int numThree) {
 
         int[] MyArr = { numOne, numTwo, numThree };
 
@@ -39,13 +40,15 @@ public class PracticeLabOne {
             }
         }
         System.out.println(Min);
+        return Min;
 
     }
 
-    public static void Median(int numOne, int numTwo, int numThree) {
+    public static int Median(int numOne, int numTwo, int numThree) {
         int[] MyArr = { numOne, numTwo, numThree };
         Arrays.sort(MyArr);
         System.out.println(MyArr[1]);
+        return MyArr[1];
 
 
        
