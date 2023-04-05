@@ -67,7 +67,7 @@ public class PracticeLabOne {
     public static boolean IsFactor(int k, int n) {
 
         boolean factorialize = k%n==0;
-        // System.out.println(factorialize);
+       
 
         return factorialize;
     }
