@@ -46,6 +46,14 @@ public class PracticeLabOne {
         int[] MyArr = { numOne, numTwo, numThree };
         Arrays.sort(MyArr);
         System.out.println(MyArr[1]);
+
+
+       
+
+
+
+
+
     }
 
     public static void XOR(boolean boolOne, boolean boolTwo) {
@@ -61,7 +69,7 @@ public class PracticeLabOne {
         return factorialize;
     }
 
-    private static void IsPerfect(int k)  {
+    public static void IsPerfect(int k)  {
 
         int sum = 0;        
         for(int i = 1;i < k;i++)
@@ -74,7 +82,7 @@ public class PracticeLabOne {
         System.out.println(sum == k);       
     }
 
-    private static boolean IsPrime(int k) {
+    public static boolean IsPrime(int k) {
         if(k <= 1){
             return false;
         }
@@ -91,6 +99,6 @@ public class PracticeLabOne {
         System.out.println(true);
         return true;
         
-    }
+    } 
 
 }
