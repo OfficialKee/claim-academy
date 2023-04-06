@@ -3,18 +3,17 @@ import java.util.Arrays;
 public class PracticeLabOne {
     public static void main(String[] args) {
 
-        // Max3(23, 345, 43);
-        // Min3(4, 30, 46);
+        Max3(23, 345, 43);
+        Min3(4, 30, 46);
         Median(123, 54, 76);
-        // XOR(true, false);
-        // IsFactor(100, 9);
-        // IsPerfect(8);
-        // IsPrime(7);
+        XOR(true, false);
+        IsFactor(100, 9);
+        IsPerfect(8);
+        IsPrime(7);
     }
 
     public static int Max3(int numOne, int numTwo, int numThree) {
-
-        int[] MyArr = { numOne, numTwo, numThree };
+      int[] MyArr = { numOne, numTwo, numThree };
 
         int Max = MyArr[0];
 
@@ -23,14 +22,13 @@ public class PracticeLabOne {
                 Max = MyArr[i];
             }
         }
-        System.out.println(Max);
+        // System.out.println(Max);
         return(Max);
 
     }
 
     public static int Min3(int numOne, int numTwo, int numThree) {
-
-        int[] MyArr = { numOne, numTwo, numThree };
+      int[] MyArr = { numOne, numTwo, numThree };
 
         int Min = MyArr[0];
 
@@ -39,7 +37,7 @@ public class PracticeLabOne {
                 Min = MyArr[i];
             }
         }
-        System.out.println(Min);
+        // System.out.println(Min);
         return Min;
 
     }
@@ -47,7 +45,7 @@ public class PracticeLabOne {
     public static int Median(int numOne, int numTwo, int numThree) {
         int max = Max3(numOne, numTwo, numThree);
         int min = Min3(numOne, numTwo, numThree);
-        int total = numOne + numThree + numThree;
+        int total = numOne + numThree + numTwo;
         int NewMedian = total - max - min;
         return NewMedian;
 
