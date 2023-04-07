@@ -90,11 +90,9 @@ public class PracticeLabOne {
     }
 
     public static boolean IsPrime(int k) {
-        if(k <= 1){
-            return false;
-        }
+        
        
-        for(int i = 2; i <k / 2; i++)
+        for(int i = 2; i <k ; i++)
         {
             if(IsFactor(k,i))
             {
