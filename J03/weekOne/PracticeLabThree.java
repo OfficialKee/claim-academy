@@ -3,6 +3,7 @@ public class PracticeLabThree {
         RemoveCharacter("Average", 'a');
         RemoveDuplicate("mississippi");
         HowManyConsVowels("aaaaaaaabb");
+        nonReapeated("morning");
     }
 
     public static void RemoveCharacter(String word, char RemChar) {
@@ -47,7 +48,7 @@ public class PracticeLabThree {
                 }
 
             }
-        } 
+        }
         for (int i = 0; i < word.length; i++) {
             for (int j = 0; j < vowels.length; j++) {
                 if (word[i] == vowels[j]) {
@@ -57,7 +58,30 @@ public class PracticeLabThree {
             }
 
         }
-        System.out.println("total consonant: "+consonantCount +" and totals vowels " + vowelCount);
+        System.out.println("total consonant: " + consonantCount + " and totals vowels " + vowelCount);
 
+    }
+
+    
+    public static void nonReapeated(String word) {
+        char[] c = word.toLowerCase().toCharArray();
+        String checkerString = "";
+        String dupe ="";
+        for (int index = 0; index < c.length; index++) {
+            if (!checkerString.contains("" + c[index] + "")) {
+                checkerString += c[index];
+            }else {
+                dupe += c[index];
+                // if(checkerString.contains(""+c[index])){
+                    
+                // }
+                
+            }
+        }
+        
+       
+                
+        
+        System.out.println(checkerString +" "+ dupe );
     }
 }
