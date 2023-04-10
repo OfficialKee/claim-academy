@@ -62,26 +62,29 @@ public class PracticeLabThree {
 
     }
 
-    
     public static void nonReapeated(String word) {
-        char[] c = word.toLowerCase().toCharArray();
-        String checkerString = "";
-        String dupe ="";
-        for (int index = 0; index < c.length; index++) {
-            if (!checkerString.contains("" + c[index] + "")) {
-                checkerString += c[index];
-            }else {
-                dupe += c[index];
-                // if(checkerString.contains(""+c[index])){
-                    
-                // }
-                
+
+        for (int i = 0; i < word.length(); i++) {
+            if (!isRepeated(word, word.toCharArray()[i])) {
+                System.out.print(word.toCharArray()[i]);
             }
         }
-        
-       
-                
-        
-        System.out.println(checkerString +" "+ dupe );
+        for (int i = 0; i < word.length(); i++) {
+            if (isRepeated(word, word.toCharArray()[i])) {
+                System.out.print(word.toCharArray()[i]);
+            }
+        }
+    }
+
+    public static boolean isRepeated(String word, char currentIndex) {
+        int isRepeated = 0;
+
+        for (int i = 0; i < word.length(); i++) {
+            if (currentIndex == word.toCharArray()[i]) {
+                isRepeated++;
+            }
+
+        }
+        return isRepeated > 1;
     }
 }
