@@ -5,11 +5,11 @@
  * Address
  */
 public class Address {
-    int house_aptNumber;
-    String streetName;
-    String city;
-    String state;
-    int zipCode;
+    private int house_aptNumber;
+    private String streetName;
+    private String city;
+    private String state;
+    private int zipCode;
 
     public Address(int house_aptNumber,String streetName, String city, String state, int zipCode){
         this.house_aptNumber = house_aptNumber;

@@ -1,8 +1,12 @@
-public class Interface {
-    public Interface(){
 
+
+public class Interface {
+    public static void main(String[] args) {
+        
     }
-}
+
+    
+} 
 
 // create a function that takes the person and the addess and add it to  an array of objects.
 /* [

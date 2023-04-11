@@ -1,11 +1,11 @@
 /**
  * Person
  */
-public class Person {
+public class Person  {
 
-    String firstName;
-    String lastName;
-    long phoneNumber;
+    private String firstName;
+    private String lastName;
+    private long phoneNumber;
     
 
     public Person(String firstName, String lastName, long phoneNumber){
