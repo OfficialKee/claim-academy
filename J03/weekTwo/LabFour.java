@@ -80,10 +80,13 @@ public class LabFour {
         return count;
     }
 
-    public static void stringTimes(String word, int amt) {
+    public static String stringTimes(String word, int amt) {
+        String empty ="";
         for (int i = 0; i < amt; i++) {
             System.out.print(word);
+            empty += word;
         }
         
+        return empty;
     }
 }
