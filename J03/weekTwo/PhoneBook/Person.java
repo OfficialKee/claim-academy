@@ -40,17 +40,31 @@ public class Person  {
         this.phoneNumber = phoneNumber;
     }
 
-
     public Address getAddress() {
         return this.address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 
-    public void getCity(){
+    public String getCity(){
+        return this.address.getCity();
+    }
+    public String getState(){
+        return this.address.getState();
+    }
         
+    public int getZipCode(){
+        return this.address.getZipCode();
+    }
+        
+    public String getStreet(){
+        return this.address.getStreetName();   
+    }
+    
+    public int getHouseNumber(){
+        return this.address.getHouseNumber();
     }
     
 

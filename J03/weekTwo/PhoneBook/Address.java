@@ -22,7 +22,7 @@ public class Address {
     }
 
 
-    public int getHouse_aptNumber() {
+    public int getHouseNumber() {
         return this.house_aptNumber;
     }
 
@@ -62,6 +62,7 @@ public class Address {
         this.zipCode = zipCode;
     }
 
+   
     
 }
   

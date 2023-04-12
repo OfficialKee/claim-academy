@@ -25,7 +25,7 @@ public class Interface {
             }
             if (value == 2 ) {
                 for (Person person : mainPhoneBook) {
-                    System.out.println("\n"+person.getFirstName() +" "+person.getLastName() + " "+ person.getPhoneNumber()+ " "+person.getAddress().getCity());
+                    System.out.println("\n"+person.getFirstName() +" "+person.getLastName() + " "+ person.getPhoneNumber()+ " "+person.getAddress());
                 
                 }
 
