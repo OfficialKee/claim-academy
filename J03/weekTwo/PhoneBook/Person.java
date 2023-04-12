@@ -2,16 +2,18 @@
  * Person
  */
 public class Person  {
-
+    private Address address;
     private String firstName;
     private String lastName;
     private long phoneNumber;
+
     
 
-    public Person(String firstName, String lastName, long phoneNumber){
+    public Person(String firstName, String lastName, Address address, long phoneNumber){
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
+        this.address = address;
     }
 
     public String getFirstName() {
@@ -39,4 +41,17 @@ public class Person  {
     }
 
 
-}
+    public Address getAddress() {
+        return this.address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void getCity(){
+        
+    }
+    
+
+} 

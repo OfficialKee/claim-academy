@@ -17,6 +17,7 @@ public class Address {
         this.city = city;
         this.state = state;
         this.zipCode = zipCode;
+        
 
     }
 
@@ -38,7 +39,7 @@ public class Address {
     }
 
     public String getCity() {
-        return this.city;
+       return this.city;
     }
 
     public void setCity(String city) {

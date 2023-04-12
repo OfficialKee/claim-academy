@@ -1,23 +1,12 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import javax.lang.model.util.ElementScanner14;
-
-import java.util.HashMap;
-import java.io.*;
-import java.util.*;
-
 public class Interface {
     public static void main(String[] args) {
 
-        Address myAddy = new Address(2943, "Spring Park rd", "Jacksonville", "Florida", 32207);
-
-        // System.out.println(myAddy.getStreetName());
-
         Boolean running = true;
-
-        HashMap<String, String> phoneBook = new HashMap<String, String>();
+        
         ArrayList<Person> mainPhoneBook = new ArrayList<>();
+        
 
         while (running) {
 
@@ -28,16 +17,15 @@ public class Interface {
             if (value == 1) {
                 String firstName = addFirstName();
                 String lastName = addLastName();
+                Address address = addAddress();
                 long phoneNumber = addNumber();
-
-                Person contact = new Person(firstName, lastName, phoneNumber);
-                String strigify = contact.toString();
+                Person contact = new Person(firstName, lastName, address, phoneNumber);
                 mainPhoneBook.add(contact);
-
+                    
             }
-            if (value == 2) {
+            if (value == 2 ) {
                 for (Person person : mainPhoneBook) {
-                    System.out.println("\n"+person.getFirstName() +" "+person.getLastName() + " "+ person.getPhoneNumber());
+                    System.out.println("\n"+person.getFirstName() +" "+person.getLastName() + " "+ person.getPhoneNumber()+ " "+person.getAddress().getCity());
                 
                 }
 
@@ -52,9 +40,10 @@ public class Interface {
         System.out.println(" \n------------------------");
         System.out.println(" [0] Exit Phonebook App ");
         System.out.println(" [1] Add contact ");
-        System.out.println(" [2] Delete contact ");
-        System.out.println(" [3] Search Contact ");
-        System.out.println(" [4] Update Contact ");
+        System.out.println(" [2] Show Phonebook ");
+        System.out.println(" [3] Delete Contact ");
+        System.out.println(" [4] Search Contact ");
+        System.out.println(" [5] Update Contact ");
         System.out.println(" ------------------------");
 
         Scanner scanner = scanner();
@@ -83,6 +72,27 @@ public class Interface {
         Scanner scanner = scanner();
         long phoneNumber = scanner.nextLong();
         return phoneNumber;
+    }
+
+    public static  Address addAddress() {
+        Scanner scanner = scanner();
+        System.out.println("Enter home or apartment number");
+        int home = scanner.nextInt();
+        System.out.println("Enter street name: ");
+        scanner.nextLine();
+        String street = scanner.nextLine();
+        System.out.println("Enter city: ");
+        String city = scanner.next();
+        System.out.println("Enter state: ");
+        String state = scanner.next();
+        System.out.println("Enter zip code: ");
+        int zipCode = scanner.nextInt();
+
+      Address theAddy = new Address(home, street, city, state, zipCode);
+
+        return theAddy;
+
+        
     }
 
     public static Scanner scanner() {
