@@ -24,6 +24,9 @@ public class Interface {
                deleteByName(mainPhoneBook);
 
             }
+            if(value == 4){
+                
+            }
         }
 
     }
@@ -126,7 +129,6 @@ public class Interface {
                     String nameToBeDeleted = contact.getFirstName();
                     if (deleteValue.toLowerCase().equals(nameToBeDeleted)) {
                         mainPhoneBook.remove(contact);
-
                     }
 
                 }
