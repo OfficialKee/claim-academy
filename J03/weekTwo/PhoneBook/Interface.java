@@ -1,5 +1,6 @@
 import java.util.ArrayList;
-
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Interface {
@@ -34,6 +35,9 @@ public class Interface {
                 // filter listby lastName
                 filterByName(mainPhoneBook);
                 
+            }
+            if(value == 5){
+                sortArray(mainPhoneBook);
             }
         }
 
@@ -107,6 +111,8 @@ public class Interface {
     }
 
     public static void printPhoneBook(ArrayList<Person> mainPhoneBook) {
+        // sort function that sorts the names into order on each print call
+        sortArray(mainPhoneBook);
         for (Person person : mainPhoneBook) {
             System.out.println("\n" + person.getFirstName() + " " + person.getLastName() + ": |"
                     + person.getPhoneNumber() + "| " + person.getHouseNumber() + " " + person.getStreet() + ", "
@@ -176,6 +182,19 @@ public class Interface {
         mainPhoneBook.add(Shiloh);
         mainPhoneBook.add(Amira);
         mainPhoneBook.add(Pharaoh);
+
+        
+        
+    }
+
+    public static void sortArray(ArrayList<Person> mainPhoneBook) {
+
+    //   for (Person contact : mainPhoneBook) {
+        mainPhoneBook.sort(new ContactCompare());
+        
+    //   }
+
+      
         
     }
 }
@@ -214,3 +233,8 @@ public class Interface {
  * 
  * delete by telephone number
  */
+
+ 
+ /*
+ Java comparable interface
+  */
