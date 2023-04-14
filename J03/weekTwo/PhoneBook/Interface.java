@@ -1,14 +1,16 @@
 import java.util.ArrayList;
+
 import java.util.Scanner;
 
 public class Interface {
     public static void main(String[] args) {
         Boolean running = true;
          ArrayList<Person> mainPhoneBook = new ArrayList<>();
-
-          starterContacts(mainPhoneBook);
-
-      
+        
+         
+         starterContacts(mainPhoneBook);
+        
+        
         while (running) {
 
             int value = welcomeUser();
@@ -135,12 +137,14 @@ public class Interface {
                     String nameToBeDeleted = contact.getFirstName();
                     if (deleteValue.toLowerCase().equals(nameToBeDeleted.toLowerCase())) {
                         mainPhoneBook.remove(contact);
+                        break;
                     }
 
                 }
-                printPhoneBook(mainPhoneBook);
+                // printPhoneBook(mainPhoneBook); ... for whatever reason this was breaking my code
         
     }
+
     public static void filterByName(ArrayList<Person> mainPhoneBook) {
         System.out.println("Enter the LAST NAME of the user you want to search for. ");
                 Scanner scanner = scanner();
