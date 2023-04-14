@@ -3,11 +3,12 @@ import java.util.Scanner;
 
 public class Interface {
     public static void main(String[] args) {
-
         Boolean running = true;
+         ArrayList<Person> mainPhoneBook = new ArrayList<>();
 
-        ArrayList<Person> mainPhoneBook = new ArrayList<>();
+          starterContacts(mainPhoneBook);
 
+      
         while (running) {
 
             int value = welcomeUser();
@@ -15,16 +16,21 @@ public class Interface {
                 running = false;
             }
             if (value == 1) {
+                // create and add contact to phone book
                 createContact(mainPhoneBook);
             }
             if (value == 2) {
+                // print out list of users
                 printPhoneBook(mainPhoneBook);
             }
             if (value == 3) {
+                // delte userbyName
                deleteByName(mainPhoneBook);
 
             }
             if(value == 4){
+                // filter listby lastName
+                filterByName(mainPhoneBook);
                 
             }
         }
@@ -121,18 +127,51 @@ public class Interface {
     }
 
     public static void deleteByName(ArrayList<Person> mainPhoneBook) {
-        System.out.println("Enter the first name of the user you want to delete. ");
+        System.out.println("Enter the FIRST NAME of the user you want to delete. ");
                 Scanner scanner = scanner();
                 String deleteValue = scanner.next();
 
                 for (Person contact : mainPhoneBook) {
                     String nameToBeDeleted = contact.getFirstName();
-                    if (deleteValue.toLowerCase().equals(nameToBeDeleted)) {
+                    if (deleteValue.toLowerCase().equals(nameToBeDeleted.toLowerCase())) {
                         mainPhoneBook.remove(contact);
                     }
 
                 }
                 printPhoneBook(mainPhoneBook);
+        
+    }
+    public static void filterByName(ArrayList<Person> mainPhoneBook) {
+        System.out.println("Enter the LAST NAME of the user you want to search for. ");
+                Scanner scanner = scanner();
+                String filterValue = scanner.next();
+
+                for (Person contact : mainPhoneBook) {
+                    String nameToBeFiltered = contact.getLastName();
+                    if (filterValue.toLowerCase().equals(nameToBeFiltered.toLowerCase())) {
+                        
+                        System.out.println("\n" + contact.getFirstName() + " " + contact.getLastName() + ": |"
+                     + contact.getPhoneNumber() + "| " + contact.getHouseNumber() + " " + contact.getStreet() + ", "
+                     + contact.getCity() + " " + contact.getState() + " " + contact.getZipCode());
+
+                    }
+
+                }
+               
+        
+    }
+
+    public static void starterContacts(ArrayList<Person> mainPhoneBook) {
+        Address Home = new Address(2943, "Lake well Dr", "Jacksonville", "Florida", 32279);
+
+        Person Kee = new Person("Kee", "Maloney", Home, 7064050550L);
+        Person Shiloh = new Person("Shiloh", "Maloney", Home, 3371234567L);
+        Person Amira = new Person("Amira", "Waiters", Home, 7193375190L);
+        Person Pharaoh = new Person("Pharaoh", "Waiters", Home, 3344156789L);
+        mainPhoneBook.add(Kee);
+        mainPhoneBook.add(Shiloh);
+        mainPhoneBook.add(Amira);
+        mainPhoneBook.add(Pharaoh);
         
     }
 }
