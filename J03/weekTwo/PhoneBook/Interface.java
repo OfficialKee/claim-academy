@@ -1,17 +1,13 @@
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class Interface {
     public static void main(String[] args) {
         Boolean running = true;
-         ArrayList<Person> mainPhoneBook = new ArrayList<>();
-        
-         
-         starterContacts(mainPhoneBook);
-        
-        
+        ArrayList<Person> mainPhoneBook = new ArrayList<>();
+
+        starterContacts(mainPhoneBook);
+
         while (running) {
 
             int value = welcomeUser();
@@ -19,39 +15,30 @@ public class Interface {
             if (value == 0) {
                 running = false;
             }
-             // create and add contact to phone book
+            // create and add contact to phone book
             if (value == 1) {
-               
+
                 createContact(mainPhoneBook);
             }
-              // print out list of users
+            // print out list of users
             if (value == 2) {
-              
+
                 printPhoneBook(mainPhoneBook);
             }
             // delete by number
             if (value == 3) {
-               deleteByPhoneNumber(mainPhoneBook);
+                deleteByPhoneNumber(mainPhoneBook);
 
             }
             // filter user choices
-            if(value == 4){
-                System.out.println("Wouldyou like to filter user by: ");
-                System.out.println("[1] name ");
-                System.out.println("[2] number");
-                Scanner scanner = scanner();
-                int filterChoice = scanner.nextInt();
-                if(filterChoice==1){
-                    filterByName(mainPhoneBook);
-                }
-                if(filterChoice ==2){
-                    filterByNumber(mainPhoneBook);
-                }
+            if (value == 4) {
+                filterChoices(mainPhoneBook);
+
             }
             // update user
-            if(value == 5){
+            if (value == 5) {
                 updateByNumber(mainPhoneBook);
-                
+
             }
         }
 
@@ -75,8 +62,9 @@ public class Interface {
         Scanner scanner = scanner();
         return scanner.nextInt();
     }
+
     public static int deleteChoices() {
-        
+
         System.out.println("\nChoose an option: ");
         System.out.println(" \n------------------------");
         System.out.println(" [1] Delete bycontact ");
@@ -145,9 +133,7 @@ public class Interface {
         // sort function that sorts the names into order on each print call
         sortArray(mainPhoneBook);
         for (Person person : mainPhoneBook) {
-            System.out.println("\n" + person.getFirstName() + " " + person.getLastName() + ": |"
-                    + person.getPhoneNumber() + "| " + person.getHouseNumber() + " " + person.getStreet() + ", "
-                    + person.getCity() + " " + person.getState() + " " + person.getZipCode());
+            System.out.println(person);
 
             System.out.println("==================================================================");
             System.out.println("==================================================================");
@@ -167,83 +153,77 @@ public class Interface {
 
     public static void deleteByFirstName(ArrayList<Person> mainPhoneBook) {
         System.out.println("Enter the FIRST NAME of the user you want to delete. ");
-                Scanner scanner = scanner();
-                String deleteValue = scanner.next();
+        Scanner scanner = scanner();
+        String deleteValue = scanner.next();
 
-                for (Person contact : mainPhoneBook) {
-                    String nameToBeDeleted = contact.getFirstName();
-                    if (deleteValue.toLowerCase().equals(nameToBeDeleted.toLowerCase())) {
-                        mainPhoneBook.remove(contact);
-                        break;
-                    }
+        for (Person contact : mainPhoneBook) {
+            String nameToBeDeleted = contact.getFirstName();
+            if (deleteValue.toLowerCase().equals(nameToBeDeleted.toLowerCase())) {
+                mainPhoneBook.remove(contact);
+                break;
+            }
 
-                }
-                // printPhoneBook(mainPhoneBook); ... for whatever reason this was breaking my code
-        
+        }
+        // printPhoneBook(mainPhoneBook); ... for whatever reason this was breaking my
+        // code
+
     }
- 
+
     public static void deleteByPhoneNumber(ArrayList<Person> mainPhoneBook) {
         System.out.println("Enter the PHONE NUMBER of the user you want to delete. ");
-                Scanner scanner = scanner();
-                Long deleteValue = scanner.nextLong();
+        Scanner scanner = scanner();
+        Long deleteValue = scanner.nextLong();
 
-                for (Person contact : mainPhoneBook) {
-                    Long numberToBeDeleted = contact.getPhoneNumber();
-                    if (deleteValue.equals(numberToBeDeleted)) {
-                        mainPhoneBook.remove(contact);
-                        break;
-                    }
+        for (Person contact : mainPhoneBook) {
+            Long numberToBeDeleted = contact.getPhoneNumber();
+            if (deleteValue.equals(numberToBeDeleted)) {
+                mainPhoneBook.remove(contact);
+                break;
+            }
 
-                }
-                // printPhoneBook(mainPhoneBook); ... for whatever reason this was breaking my code
-        
+        }
+        // printPhoneBook(mainPhoneBook); ... for whatever reason this was breaking my
+        // code
+
     }
 
     public static void filterByName(ArrayList<Person> mainPhoneBook) {
         System.out.println("Enter the LAST NAME of the user you want to search for. ");
-                Scanner scanner = scanner();
-                String filterValue = scanner.next();
-                System.out.println( " Here are the contacts with the last name "+ filterValue.toUpperCase());
-                System.out.println("\n \n \n \n");
+        Scanner scanner = scanner();
+        String filterValue = scanner.next();
+        System.out.println(" Here are the contacts with the last name " + filterValue.toUpperCase());
+        System.out.println("\n \n \n \n");
 
-                for (Person contact : mainPhoneBook) {
-                    String nameToBeFiltered = contact.getLastName();
-                    if (filterValue.toLowerCase().equals(nameToBeFiltered.toLowerCase())) {
-                        
-                        System.out.println("\n" + contact.getFirstName() + " " + contact.getLastName() + ": |"
-                     + contact.getPhoneNumber() + "| " + contact.getHouseNumber() + " " + contact.getStreet() + ", "
-                     + contact.getCity() + " " + contact.getState() + " " + contact.getZipCode());
+        for (Person contact : mainPhoneBook) {
+            String nameToBeFiltered = contact.getLastName();
+            if (filterValue.toLowerCase().equals(nameToBeFiltered.toLowerCase())) {
 
-                    }
+                System.out.println(contact);
 
-                }
-                System.out.println("\n \n \n \n");
+            }
 
-               
-        
+        }
+        System.out.println("\n \n \n \n");
+
     }
-    
+
     public static void filterByNumber(ArrayList<Person> mainPhoneBook) {
         System.out.println("Enter the PHONE NUMBER of the user you want to search for. ");
-                Scanner scanner = scanner();
-                Long filterValue = scanner.nextLong();
-                System.out.println("\n \n \n \n");
-                System.out.println( " Here are the contacts with the phone number "+ filterValue);
-                for (Person contact : mainPhoneBook) {
-                    Long nameToBeFiltered = contact.getPhoneNumber();
-                    if (filterValue.equals(nameToBeFiltered)) {
-                        
-                        System.out.println("\n" + contact.getFirstName() + " " + contact.getLastName() + ": |"
-                     + contact.getPhoneNumber() + "| " + contact.getHouseNumber() + " " + contact.getStreet() + ", "
-                     + contact.getCity() + " " + contact.getState() + " " + contact.getZipCode());
+        Scanner scanner = scanner();
+        Long filterValue = scanner.nextLong();
+        System.out.println("\n \n \n \n");
+        System.out.println(" Here are the contacts with the phone number " + filterValue);
+        for (Person contact : mainPhoneBook) {
+            Long nameToBeFiltered = contact.getPhoneNumber();
+            if (filterValue.equals(nameToBeFiltered)) {
 
-                    }
+                System.out.println(contact);
 
-                }
-                System.out.println("\n \n \n \n");
+            }
 
-               
-        
+        }
+        System.out.println("\n \n \n \n");
+
     }
 
     public static void starterContacts(ArrayList<Person> mainPhoneBook) {
@@ -258,45 +238,57 @@ public class Interface {
         mainPhoneBook.add(Amira);
         mainPhoneBook.add(Pharaoh);
 
-        
-        
     }
 
     public static void sortArray(ArrayList<Person> mainPhoneBook) {
 
-    //   for (Person contact : mainPhoneBook) {
+        // for (Person contact : mainPhoneBook) {
         mainPhoneBook.sort(new ContactCompare());
-        
-    //   }
 
-      
-        
+        // }
+
     }
 
     public static void updateByNumber(ArrayList<Person> mainPhoneBook) {
         System.out.println("Enter the PHONE NUMBER of the user you want to update. ");
-                Scanner scanner = scanner();
-                Long filterValue = scanner.nextLong();
-                System.out.println("\n \n \n \n");
-                System.out.println( " Here are the contacts with the phone number "+ filterValue);
-                for (Person contact : mainPhoneBook) {
-                    Long nameToBeFiltered = contact.getPhoneNumber();
-                    if (filterValue.equals(nameToBeFiltered)) {
-                      
-                        System.out.println(contact.getFirstName()+" "+contact.getPhoneNumber());
-                        System.out.println("Enter updated number: ");
-                        
-                        Long updatedNumber = scanner.nextLong();
-                      
-                        contact.setPhoneNumber(updatedNumber);
+        Scanner scanner = scanner();
+        Long filterValue = scanner.nextLong();
+        System.out.println("\n \n \n \n");
+        System.out.println(" Here are the contacts with the phone number " + filterValue);
+        for (Person contact : mainPhoneBook) {
+            Long nameToBeFiltered = contact.getPhoneNumber();
+            if (filterValue.equals(nameToBeFiltered)) {
 
-                    }
+                System.out
+                        .println(contact.getFirstName() + " " + contact.getLastName() + " " + contact.getPhoneNumber());
+                System.out.println("Enter updated number: ");
 
-                }
-                System.out.println("\n \n \n \n");
+                Long updatedNumber = scanner.nextLong();
 
-               
-        
+                contact.setPhoneNumber(updatedNumber);
+
+            }
+
+        }
+        System.out.println("\n \n \n \n");
+
+    }
+
+    public static void filterChoices(ArrayList<Person> mainPhoneBook) {
+        System.out.println("Wouldyou like to filter user by: ");
+        System.out.println("[1] name ");
+        System.out.println("[2] number");
+        Scanner scanner = scanner();
+        int filterChoice = scanner.nextInt();
+        if (filterChoice == 1) {
+            filterByName(mainPhoneBook);
+        }
+        if (filterChoice == 2) {
+            filterByNumber(mainPhoneBook);
+        }
+
+        // update user
+
     }
 }
 
@@ -335,7 +327,6 @@ public class Interface {
  * delete by telephone number
  */
 
- 
- /*
- Java comparable interface
-  */
+/*
+ * Java comparable interface
+ */

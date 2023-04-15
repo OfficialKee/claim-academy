@@ -68,4 +68,11 @@ public class Person  {
     }
     
 
+    @Override
+    public String toString() {
+        return "\n" + this.getFirstName() + "\t" + this.getLastName() + "\t"
+        + this.getPhoneNumber() + "\t" + this.getHouseNumber() + " " + this.getStreet() + ", "
+        + this.getCity() + " " + this.getState() + " " + this.getZipCode();
+    }
+
 } 
